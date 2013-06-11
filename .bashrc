@@ -109,5 +109,6 @@ fi
 export PATH=$PATH:/usr/share/smlnj/bin/
 export PATH=$PATH:/usr/bin/android-studio/bin/studio.sh
 
-
+alias android="/usr/bin/android-studio/bin/studio.sh"
 alias top="htop"
+redhat=128.164.157.34
