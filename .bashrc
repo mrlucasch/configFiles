@@ -109,8 +109,13 @@ fi
 export PATH=$PATH:/usr/share/smlnj/bin/
 export PATH=$PATH:/usr/bin/android-studio/bin/studio.sh
 
+#aliases
 alias android="/usr/bin/android-studio/bin/studio.sh"
 alias top="htop"
 alias nimbus="ssh lucasch@nimbus.seas.gwu.edu"
 alias shell="ssh lucasch@shell.seas.gwu.edu"
+alias install="sudo apt-get -y install"
+alias remove="sudo apt-get -y remove"
+
+#variables
 redhat=128.164.157.34
