@@ -1,0 +1,15 @@
+atop
+iftop
+htop
+skype
+vim
+terminator
+chrome
+libreoffice
+gnome(Classic)
+dropbox
+zenmap
+okular
+eclipse
+VMPlayer
+virtualbox
