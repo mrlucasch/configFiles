@@ -13,3 +13,5 @@ okular
 eclipse
 VMPlayer
 virtualbox
+java
+java jdk
