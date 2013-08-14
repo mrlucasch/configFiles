@@ -1,4 +1,13 @@
 #! /bin/bash
+
+
+##Need to add the /etc/clusters file
+##Need to add changes to sudoers
+##Need to add java zenmap eclipse and other software
+##Need to add part that copies down the config files needed.
+
+
+
 cd
 mkdir setup
 cd setup
