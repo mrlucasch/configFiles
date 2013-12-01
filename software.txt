@@ -15,3 +15,6 @@ VMPlayer
 virtualbox
 java
 java jdk
+
+
+sudo apt-get -y install atop iftop vim zenmap okular eclipse 

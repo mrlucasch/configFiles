@@ -121,3 +121,5 @@ alias remove="sudo apt-get -y remove"
 #variables
 redhat=128.164.157.34
 server=128.164.159.250
+
+alias vmware="sudo vmware "
