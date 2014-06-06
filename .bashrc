@@ -111,7 +111,7 @@ export PATH=$PATH:/usr/bin/android-studio/bin/studio.sh
 
 #aliases
 alias android="/usr/bin/android-studio/bin/studio.sh"
-alias top="htop"
+#alias top="htop"
 alias nimbus="ssh lucasch@nimbus.seas.gwu.edu"
 alias ec2="ssh -i ~/Documents/lucasch.pem ubuntu@ec2-54-224-129-239.compute-1.amazonaws.com"
 alias shell="ssh lucasch@shell.seas.gwu.edu"
@@ -122,4 +122,6 @@ alias remove="sudo apt-get -y remove"
 redhat=128.164.157.34
 server=128.164.159.250
 
+alias deploy="rake gen_deploy"
+alias rake="bundle exec rake"
 alias vmware="sudo vmware "
