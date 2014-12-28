@@ -54,7 +54,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n$(date +"%r")$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -125,3 +125,9 @@ server=128.164.159.250
 alias deploy="rake gen_deploy"
 alias rake="bundle exec rake"
 alias vmware="sudo vmware "
+export PATH=$PATH:~/workspace/openSource/chrome_stuff/depot_tools
+export PATH=$PATH:~/bin
+alias compile="ninja -C out/Debug chrome"
+alias ipython="/Users/lucasch/Library/Enthought/Canopy_64bit/User/bin/ipython notebook"
+alias em="/Applications/Emacs.app/Contents/MacOS/Emacs"
+alias transfer="/Users/lucasch/workspace/SD/./sync.sh"
