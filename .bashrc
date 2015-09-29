@@ -37,6 +37,19 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
+
+#Set tag for prompt
+HOSTNAME=$(hostname)
+tag=""
+if [ "${HOSTNAME}" == "obelix65" ]; then
+    tag="VMS"
+fi
+
+if [ "${HOSTNAME}" == "obelix67" ]; then
+    tag="CONTAINERS"
+fi
+
+
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -54,7 +67,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n$(date +"%r")$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[38;5;196m\]($tag)\[\033[01;34m\]\w\[\033[00m\]\n$(date +"%r")$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
