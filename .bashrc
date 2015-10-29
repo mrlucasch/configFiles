@@ -119,15 +119,24 @@ alias install="sudo apt-get -y install"
 alias remove="sudo apt-get -y remove"
 
 #variables
-redhat=128.164.157.34
-server=128.164.159.250
+#redhat=128.164.157.34
+#server=128.164.159.250
 
 alias deploy="rake gen_deploy"
 alias rake="bundle exec rake"
-alias vmware="sudo vmware "
+#alias vmware="sudo vmware "
 export PATH=$PATH:~/workspace/openSource/chrome_stuff/depot_tools
 export PATH=$PATH:~/bin
-alias compile="ninja -C out/Debug chrome"
+export PATH=$PATH:/usr/local/bin
+#alias compile="ninja -C out/Debug chrome"
 alias ipython="/Users/lucasch/Library/Enthought/Canopy_64bit/User/bin/ipython notebook"
-alias em="/Applications/Emacs.app/Contents/MacOS/Emacs"
-alias transfer="/Users/lucasch/workspace/SD/./sync.sh"
+#alias em="/Applications/Emacs.app/Contents/MacOS/Emacs"
+#alias transfer="/Users/lucasch/workspace/SD/./sync.sh"
+alias go="/usr/local/go/bin/go"
+export PATH=$PATH:/usr/local/Cellar/mtr/0.86/sbin/
+export GOPATH=$HOME/workspace
+alias serve="python -m SimpleHTTPServer 8000"
+
+
+#runs Z
+. ~/workspace/z/z.sh
