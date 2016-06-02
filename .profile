@@ -1,25 +1,15 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
-
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
-
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
 
 
+source /Users/lucasch/.iterm2_shell_integration.bash
 
+
+# Added by Canopy installer on 2015-11-02
+# VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make bashprompt show that Canopy is active, otherwise 1
+
+VIRTUAL_ENV_DISABLE_PROMPT='' source /Users/lucasch/Library/Enthought/Canopy_64bit/User/bin/activate
+
+VIRTUAL_ENV_DISABLE_PROMPT=1 source /Users/lucasch/Library/Enthought/Canopy_64bit/User/bin/activate
+#/Users/lucasch/Library/Enthought/Canopy_64bit/User/bin/activate
+
+
+alias pdflatex="docker run --rm -i -v $PWD:/data jsalvarredy/latex pdflatex -shell-escape"

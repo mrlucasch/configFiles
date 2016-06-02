@@ -37,19 +37,6 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-
-#Set tag for prompt
-HOSTNAME=$(hostname)
-tag=""
-if [ "${HOSTNAME}" == "obelix65" ]; then
-    tag="VMS"
-fi
-
-if [ "${HOSTNAME}" == "obelix67" ]; then
-    tag="CONTAINERS"
-fi
-
-
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -67,7 +54,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[38;5;196m\]($tag)\[\033[01;34m\]\w\[\033[00m\]\n\[\033[38;5;128m\]$(date +"%r")$\[$(tput sgr0)\] '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n$(date +"%r")$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -98,7 +85,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
+alias lll='ls -FGlAhp'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -147,9 +134,44 @@ alias ipython="/Users/lucasch/Library/Enthought/Canopy_64bit/User/bin/ipython no
 #alias transfer="/Users/lucasch/workspace/SD/./sync.sh"
 alias go="/usr/local/go/bin/go"
 export PATH=$PATH:/usr/local/Cellar/mtr/0.86/sbin/
-export GOPATH=$HOME/workspace
+#export GOPATH=$HOME/workspace
+export GOPATH=$HOME/workspace/project-2-cloud-fusion-mrlucasch
 alias serve="python -m SimpleHTTPServer 8000"
-
+alias emacs="open -a /Applications/Emacs.app"
 
 #runs Z
 . ~/workspace/z/z.sh
+
+export EDITOR=/usr/bin/vim
+#export BLOCKSIZE=1k
+alias f='open -a Finder ./'
+ql () { qlmanage -p "$*" >& /dev/null; }
+trash () { command mv "$@" ~/.Trash ; } 
+
+#For Canopy
+VIRTUAL_ENV_DISABLE_PROMPT=1 source /Users/lucasch/Library/Enthought/Canopy_64bit/User/bin/activate
+
+#   memHogsTop, memHogsPs:  Find memory hogs
+#   -----------------------------------------------------
+alias memHogsTop='top -l 1 -o rsize | head -20'
+alias memHogsPs='ps wwaxm -o pid,stat,vsize,rss,time,command | head -10'
+
+#   cpuHogs:  Find CPU hogs
+#   -----------------------------------------------------
+alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
+
+#   ---------------------------
+#   6.  NETWORKING
+#   ---------------------------
+
+alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
+alias netCons='lsof -i'                             # netCons:      Show all open TCP/IP sockets
+
+alias lsock='sudo /usr/sbin/lsof -i -P'             # lsock:        Display open sockets
+alias lsockU='sudo /usr/sbin/lsof -nP | grep UDP'   # lsockU:       Display only open UDP sockets
+alias lsockT='sudo /usr/sbin/lsof -nP | grep TCP'   # lsockT:       Display only open TCP sockets
+alias ipInfo0='ipconfig getpacket en0'              # ipInfo0:      Get info on connections for en0
+alias ipInfo1='ipconfig getpacket en1'              # ipInfo1:      Get info on connections for en1
+alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
+alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
+alias mnt_ob='sshfs -o reconnect -o volname=Obelix_export  -o allow_other obelix:/nfs/obelix/users1/lucasch/export /Volumes/obelix'
